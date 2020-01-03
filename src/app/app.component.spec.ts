@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'projetConsolidationClient'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('projetConsolidationClient');
+    expect(app.title).toEqual('Projet consolidation d\'aquis');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('projetConsolidationClient app is running!');
+    expect(compiled.querySelector('.toolbar span').textContent).toContain('Projet consolidation d\'aquis');
   });
 });
