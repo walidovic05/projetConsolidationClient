@@ -1,3 +1,37 @@
 <div class="container">
-  <p>users list works yoo </p>
+  <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>prenom</th>
+      <th>Email</th>
+      <th>birth date</th>
+      <th>created at</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let user of usersList">
+    <tr>
+      <td>{{ user.nom }}</td>
+      <td>{{ user.prenom }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.birthDate }}</td>
+      <td>{{ user.createdAt }}</td>
+      <td>
+        <button type="button" class="btn btn-primary">Details</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th>Nom</th>
+      <th>prnom</th>
+      <th>Email</th>
+      <th>birth date</th>
+      <th>created at</th>
+      <th></th>
+    </tr>
+    </tfoot>
+  </table>
 </div>

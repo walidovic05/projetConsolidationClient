@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../user.model';
+import {UsersService} from '../users.service';
 
 @Component({
   selector: 'app-users-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 
-  constructor() { }
+  usersList = [];
+  dtOptions: DataTables.Settings = {};
+  constructor(private usersService : UsersService) { }
 
   ngOnInit() {
+    this.usersService.getUsers().subscribe(users => {
+      this.usersList.push(...users);
+    })
+    this.dtOptions = {
+      pagingType: 'full_numbers'
+    };
   }
 
 }
