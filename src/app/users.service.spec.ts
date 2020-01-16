@@ -6,8 +6,6 @@ import {map} from 'rxjs/operators';
 import { UsersService } from './users.service';
 import {User} from './user.model';
 
-
-
 describe('UsersService', () => {
   let service: UsersService;
   let httpMock: HttpTestingController;
@@ -41,7 +39,7 @@ describe('UsersService', () => {
       birthDate: new Date(1940, 2, 1),
       createdAt: new Date(2019, 4, 1)
     }];
-    const service: UsersService = TestBed.get(UsersService);
+    //const service: UsersService = TestBed.get(UsersService);
     service.getUsers().pipe(map(response => response['content'])).subscribe(users => {
       expect(users).toEqual(dummyUsers);
     });
@@ -49,6 +47,14 @@ describe('UsersService', () => {
     expect(request.request.method).toBe('GET');
     request.flush(dummyUsers);
   });
+
+  // it('should delete a user when DELETE request with specific user id', () => {
+  //   //const request = httpMock.expectOne( `${service.GLOBAL_URI}/users/2004`);
+  //   service.deleteSpecificUser(2004).subscribe(response => {
+  //     //expect(request.request.method).toBe('DELETE');
+  //     expect(response.toString()).toBe("user deleted successfully");
+  //   })
+  // });
 
   afterEach(() => {
     httpMock.verify();

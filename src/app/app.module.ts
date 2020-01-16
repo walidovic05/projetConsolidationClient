@@ -1,17 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {Routes} from '@angular/router';
 
 import {DataTablesModule} from 'angular-datatables';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './users-list/users-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersListComponent
+    UsersListComponent,
+    UserDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

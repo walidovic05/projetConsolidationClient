@@ -10,13 +10,13 @@ import {UsersService} from '../users.service';
 export class UsersListComponent implements OnInit {
 
   usersList = [];
-  dtOptions: DataTables.Settings = {};
+  dtOptions = {};
   constructor(private usersService : UsersService) { }
 
   ngOnInit() {
     this.usersService.getUsers().subscribe(users => {
       this.usersList.push(...users);
-    })
+    });
     this.dtOptions = {
       pagingType: 'full_numbers'
     };

@@ -15,4 +15,8 @@ export class UsersService {
     return this.http.get(this.GLOBAL_URI + '/users')
       .pipe(map(response => { return response['content']}));
   }
+
+  deleteSpecificUser(userId: number){
+    return this.http.delete(this.GLOBAL_URI + '/users/' + userId);
+  }
 }
