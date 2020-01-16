@@ -3,6 +3,6 @@ export interface User {
   nom: string;
   prenom: string;
   email: string;
-  birthDate: Date;
+  date_de_naissance: Date;
   createdAt: Date;
 }

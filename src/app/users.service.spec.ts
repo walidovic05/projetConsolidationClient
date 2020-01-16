@@ -29,14 +29,14 @@ describe('UsersService', () => {
       nom: 'bizid',
       prenom: 'Ali',
       email: 'ali.bizid@gmail.com',
-      birthDate: new Date(1930, 2, 1),
+      date_de_naissance: new Date(1930, 2, 1),
       createdAt: new Date(2019, 2, 1)
     }, {
       id: 2004,
       nom: 'Amar',
       prenom: 'salah',
       email: 'salah.amar@gmail.com',
-      birthDate: new Date(1940, 2, 1),
+      date_de_naissance: new Date(1940, 2, 1),
       createdAt: new Date(2019, 4, 1)
     }];
     //const service: UsersService = TestBed.get(UsersService);

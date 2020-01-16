@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {User} from './user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import {map} from 'rxjs/operators';
 export class UsersService {
 
   public GLOBAL_URI = 'http://localhost:8080/api/v1';
+  public GLOBAL_URI_V2 = 'http://localhost:8080/api/v2';
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +20,9 @@ export class UsersService {
 
   deleteSpecificUser(userId: number){
     return this.http.delete(this.GLOBAL_URI + '/users/' + userId);
+  }
+
+  getSpecificUser(userId: string) {
+    return this.http.get<User>(this.GLOBAL_URI_V2 + '/user/' + userId);
   }
 }
