@@ -10,7 +10,7 @@
       <th></th>
     </tr>
     </thead>
-    <tbody *ngFor="let user of usersList">
+    <tbody *ngFor="let user of usersList; let i= index">
     <tr>
       <td>{{ user.nom }}</td>
       <td>{{ user.prenom }}</td>
@@ -19,7 +19,7 @@
       <td>{{ user.createdAt | date}}</td>
       <td>
         <button type="button" class="btn btn-primary" [routerLink]="[user.id]" >Details</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="toDeleteUser(user.id, i)">Delete</button>
       </td>
     </tr>
     </tbody>

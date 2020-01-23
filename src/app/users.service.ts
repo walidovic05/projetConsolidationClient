@@ -19,11 +19,15 @@ export class UsersService {
   }
 
   deleteSpecificUser(userId: number){
-    return this.http.delete(this.GLOBAL_URI + '/users/' + userId);
+    return this.http.delete(this.GLOBAL_URI + '/user/' + userId);
   }
 
   getSpecificUser(userId: string) {
     return this.http.get<User>(this.GLOBAL_URI + '/users/' + userId);
+  }
+
+  updateUser(user: User){
+    return this.http.put(this.GLOBAL_URI_V2 + "/user/" + user.id, user);
   }
 
 }

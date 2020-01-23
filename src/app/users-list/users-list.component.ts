@@ -22,4 +22,11 @@ export class UsersListComponent implements OnInit {
     };
   }
 
+  toDeleteUser(id: number, index: number) {
+    console.log(id);
+    this.usersService.deleteSpecificUser(id).subscribe(res => {
+      this.usersList =  this.usersList.filter(user => user.id != id);
+    });
+    console.log("users List"+ this.usersList);
+  }
 }
