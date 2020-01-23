@@ -27,7 +27,7 @@ export class UsersService {
   }
 
   updateUser(user: User){
-    return this.http.put(this.GLOBAL_URI_V2 + "/user/" + user.id, user);
+    return this.http.put(this.GLOBAL_URI_V2 + "/user/" + user.id, user, { headers: {'Content-Type':'application/json', 'charset':'utf-8'}});
   }
 
 }
