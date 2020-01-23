@@ -23,6 +23,7 @@ export class UsersService {
   }
 
   getSpecificUser(userId: string) {
-    return this.http.get<User>(this.GLOBAL_URI_V2 + '/user/' + userId);
+    return this.http.get<User>(this.GLOBAL_URI + '/users/' + userId);
   }
+
 }

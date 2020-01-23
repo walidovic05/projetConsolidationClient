@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     UserDetailsComponent,
     PageNotFoundComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DataTablesModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        DataTablesModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

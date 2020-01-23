@@ -15,8 +15,8 @@
       <td>{{ user.nom }}</td>
       <td>{{ user.prenom }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.date_de_naissance }}</td>
-      <td>{{ user.createdAt }}</td>
+      <td>{{ user.date_de_naissance | date }}</td>
+      <td>{{ user.createdAt | date}}</td>
       <td>
         <button type="button" class="btn btn-primary" [routerLink]="[user.id]" >Details</button>
         <button type="button" class="btn btn-danger">Delete</button>

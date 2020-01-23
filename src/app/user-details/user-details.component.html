@@ -1,9 +1,33 @@
 <div class="activeUser">
-  <h1>User details</h1>
-  <ul>
-    <li> {{ user.nom }}</li>
-    <li> {{ user.prenom }}</li>
-    <li> {{ user.date_de_naissance }}</li>
-    <li> {{ user.email }}</li>
-  </ul>
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+        <div class="row">
+          <div class="col">
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName" name="nom" placeholder="First name" required [(ngModel)]="user.nom" disabled={{toUpdate}}>
+          </div>
+          <div class="col">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="prenom" placeholder="Last name" required [(ngModel)]="user.prenom" disabled={{toUpdate}}>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required [(ngModel)]="user.email" disabled={{toUpdate}}>
+        </div>
+        <div class="form-group">
+          <input type="date" class="form-date" name="date_de_naissance" id="date_naissance" required [(ngModel)]="user.date_de_naissance" disabled={{toUpdate}}>
+        </div>
+        <button type="button" (click)="activateUpdateMode()" class="btn btn-info"> {{ toUpdate ? "Enable Edit mode" : "Disable edit mode" }} </button>
+        <button type="submit" class="btn btn-primary" *ngIf="toUpdate == false ">Submit</button>
+      </form>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+
 </div>
