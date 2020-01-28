@@ -30,4 +30,8 @@ export class UsersService {
     return this.http.put(this.GLOBAL_URI_V2 + "/user/" + user.id, user, { headers: {'Content-Type':'application/json', 'charset':'utf-8'}});
   }
 
+  addUser(user: User){
+    return this.http.post<User>(this.GLOBAL_URI_V2 + "/user", user, { headers: {'Content-Type':'application/json', 'charset':'utf-8'}});
+  }
+
 }

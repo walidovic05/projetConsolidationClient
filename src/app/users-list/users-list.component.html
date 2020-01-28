@@ -1,9 +1,13 @@
 <div class="container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: 10px; margin-bottom: 5px">
+    Add new User
+  </button>
   <table datatable [dtOptions]="dtOptions" class="row-border hover">
     <thead>
     <tr>
-      <th>Nom</th>
-      <th>prenom</th>
+      <th>first name</th>
+      <th>Last name</th>
       <th>Email</th>
       <th>birth date</th>
       <th>created at</th>
@@ -34,4 +38,42 @@
     </tr>
     </tfoot>
   </table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="onAddUser()" #f="ngForm" >
+            <div class="row">
+              <div class="col">
+                <label for="FirstName">First Name</label>
+                <input type="text" class="form-control" id="FirstName" name="nom" placeholder="First name" required [(ngModel)]="userToAdd.nom" >
+              </div>
+              <div class="col">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="prenom" placeholder="Last name" required [(ngModel)]="userToAdd.prenom" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required [(ngModel)]="userToAdd.email" >
+            </div>
+            <div class="form-group">
+              <input type="date" class="form-date" name="date_de_naissance" id="date_naissance" required [(ngModel)]="userToAdd.date_de_naissance" >
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
